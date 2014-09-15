@@ -44,6 +44,8 @@
             this.BTN_Modifier = new System.Windows.Forms.Button();
             this.BTN_Suivant = new System.Windows.Forms.Button();
             this.BTN_Preced = new System.Windows.Forms.Button();
+            this.BTN_Fin = new System.Windows.Forms.Button();
+            this.BTN_Debut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LB_Dept
@@ -53,6 +55,7 @@
             this.LB_Dept.Name = "LB_Dept";
             this.LB_Dept.Size = new System.Drawing.Size(195, 17);
             this.LB_Dept.TabIndex = 0;
+            this.LB_Dept.SelectedIndexChanged += new System.EventHandler(this.LB_Dept_SelectedIndexChanged);
             // 
             // NumEmp
             // 
@@ -75,7 +78,7 @@
             this.TB_Salaire.Location = new System.Drawing.Point(112, 143);
             this.TB_Salaire.Name = "TB_Salaire";
             this.TB_Salaire.Size = new System.Drawing.Size(102, 20);
-            this.TB_Salaire.TabIndex = 6;
+            this.TB_Salaire.TabIndex = 8;
             // 
             // label2
             // 
@@ -83,7 +86,7 @@
             this.label2.Location = new System.Drawing.Point(27, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Salaire";
             // 
             // TB_Prenom
@@ -91,7 +94,7 @@
             this.TB_Prenom.Location = new System.Drawing.Point(112, 117);
             this.TB_Prenom.Name = "TB_Prenom";
             this.TB_Prenom.Size = new System.Drawing.Size(102, 20);
-            this.TB_Prenom.TabIndex = 8;
+            this.TB_Prenom.TabIndex = 6;
             // 
             // LB_Prenom
             // 
@@ -99,7 +102,7 @@
             this.LB_Prenom.Location = new System.Drawing.Point(26, 117);
             this.LB_Prenom.Name = "LB_Prenom";
             this.LB_Prenom.Size = new System.Drawing.Size(46, 13);
-            this.LB_Prenom.TabIndex = 7;
+            this.LB_Prenom.TabIndex = 5;
             this.LB_Prenom.Text = "Prénom:";
             // 
             // TB_Nom
@@ -107,7 +110,7 @@
             this.TB_Nom.Location = new System.Drawing.Point(111, 91);
             this.TB_Nom.Name = "TB_Nom";
             this.TB_Nom.Size = new System.Drawing.Size(102, 20);
-            this.TB_Nom.TabIndex = 10;
+            this.TB_Nom.TabIndex = 4;
             // 
             // LB_Nom
             // 
@@ -115,7 +118,7 @@
             this.LB_Nom.Location = new System.Drawing.Point(26, 91);
             this.LB_Nom.Name = "LB_Nom";
             this.LB_Nom.Size = new System.Drawing.Size(32, 13);
-            this.LB_Nom.TabIndex = 9;
+            this.LB_Nom.TabIndex = 3;
             this.LB_Nom.Text = "Nom:";
             // 
             // TB_Total
@@ -123,7 +126,7 @@
             this.TB_Total.Location = new System.Drawing.Point(333, 15);
             this.TB_Total.Name = "TB_Total";
             this.TB_Total.Size = new System.Drawing.Size(47, 20);
-            this.TB_Total.TabIndex = 11;
+            this.TB_Total.TabIndex = 17;
             // 
             // label1
             // 
@@ -131,7 +134,7 @@
             this.label1.Location = new System.Drawing.Point(224, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 12;
+            this.label1.TabIndex = 16;
             this.label1.Text = "Nbre total employés:";
             // 
             // BTN_Ajouter
@@ -142,6 +145,7 @@
             this.BTN_Ajouter.TabIndex = 13;
             this.BTN_Ajouter.Text = "Ajouter";
             this.BTN_Ajouter.UseVisualStyleBackColor = true;
+            this.BTN_Ajouter.Click += new System.EventHandler(this.BTN_Ajouter_Click);
             // 
             // BTN_Supprimer
             // 
@@ -151,6 +155,7 @@
             this.BTN_Supprimer.TabIndex = 14;
             this.BTN_Supprimer.Text = "Supprimer";
             this.BTN_Supprimer.UseVisualStyleBackColor = true;
+            this.BTN_Supprimer.Click += new System.EventHandler(this.BTN_Supprimer_Click);
             // 
             // BTN_Modifier
             // 
@@ -160,30 +165,55 @@
             this.BTN_Modifier.TabIndex = 15;
             this.BTN_Modifier.Text = "Modifier";
             this.BTN_Modifier.UseVisualStyleBackColor = true;
+            this.BTN_Modifier.Click += new System.EventHandler(this.BTN_Modifier_Click);
             // 
             // BTN_Suivant
             // 
-            this.BTN_Suivant.Location = new System.Drawing.Point(125, 190);
+            this.BTN_Suivant.Location = new System.Drawing.Point(156, 190);
             this.BTN_Suivant.Name = "BTN_Suivant";
-            this.BTN_Suivant.Size = new System.Drawing.Size(89, 24);
-            this.BTN_Suivant.TabIndex = 16;
+            this.BTN_Suivant.Size = new System.Drawing.Size(63, 24);
+            this.BTN_Suivant.TabIndex = 11;
             this.BTN_Suivant.Text = "Suivant";
             this.BTN_Suivant.UseVisualStyleBackColor = true;
+            this.BTN_Suivant.Click += new System.EventHandler(this.BTN_Suivant_Click);
             // 
             // BTN_Preced
             // 
-            this.BTN_Preced.Location = new System.Drawing.Point(30, 190);
+            this.BTN_Preced.Location = new System.Drawing.Point(82, 190);
             this.BTN_Preced.Name = "BTN_Preced";
-            this.BTN_Preced.Size = new System.Drawing.Size(89, 24);
-            this.BTN_Preced.TabIndex = 17;
+            this.BTN_Preced.Size = new System.Drawing.Size(68, 24);
+            this.BTN_Preced.TabIndex = 10;
             this.BTN_Preced.Text = "Précédent";
             this.BTN_Preced.UseVisualStyleBackColor = true;
+            this.BTN_Preced.Click += new System.EventHandler(this.BTN_Preced_Click);
+            // 
+            // BTN_Fin
+            // 
+            this.BTN_Fin.Location = new System.Drawing.Point(225, 190);
+            this.BTN_Fin.Name = "BTN_Fin";
+            this.BTN_Fin.Size = new System.Drawing.Size(63, 24);
+            this.BTN_Fin.TabIndex = 12;
+            this.BTN_Fin.Text = "Fin";
+            this.BTN_Fin.UseVisualStyleBackColor = true;
+            this.BTN_Fin.Click += new System.EventHandler(this.BTN_Fin_Click);
+            // 
+            // BTN_Debut
+            // 
+            this.BTN_Debut.Location = new System.Drawing.Point(13, 190);
+            this.BTN_Debut.Name = "BTN_Debut";
+            this.BTN_Debut.Size = new System.Drawing.Size(63, 24);
+            this.BTN_Debut.TabIndex = 9;
+            this.BTN_Debut.Text = "Début";
+            this.BTN_Debut.UseVisualStyleBackColor = true;
+            this.BTN_Debut.Click += new System.EventHandler(this.BTN_Debut_Click);
             // 
             // Compagnie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 226);
+            this.Controls.Add(this.BTN_Debut);
+            this.Controls.Add(this.BTN_Fin);
             this.Controls.Add(this.BTN_Preced);
             this.Controls.Add(this.BTN_Suivant);
             this.Controls.Add(this.BTN_Modifier);
@@ -226,6 +256,8 @@
         private System.Windows.Forms.Button BTN_Modifier;
         private System.Windows.Forms.Button BTN_Suivant;
         private System.Windows.Forms.Button BTN_Preced;
+        private System.Windows.Forms.Button BTN_Fin;
+        private System.Windows.Forms.Button BTN_Debut;
     }
 }
 
